@@ -165,7 +165,7 @@ string Bitmap::asHexString() {
 
 string Bitmap::asBinaryString() {
 	char buf[1001];
-	if (number_of_bits_ > 1000) {
+	if (number_of_bits_ >= sizeof(buf)) {
 		return "(too many bits for binary string)";
 	}
 	int i;
