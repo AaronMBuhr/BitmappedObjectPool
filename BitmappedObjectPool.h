@@ -1,6 +1,23 @@
-/* Copyright 2025 Logzilla Corp. */
-
 #pragma once
+
+/**
+ * BitmappedObjectPool<T> - A high-performance, thread-safe object pool implementation
+ * 
+ * Manages allocation and deallocation of objects with zero-fragmentation and
+ * minimal overhead. Key features:
+ * - Chunk-based allocation with dynamic growth and controlled shrinking
+ * - Type-safe template implementation for any C++ object type
+ * - Thread-safe operations for concurrent allocate/release
+ * - Configurable memory retention via percent_slack parameter
+ * - O(1) allocations for already-reserved memory
+ * - Zero-fragmentation memory layout
+ * - Safe pointer validation to detect use-after-free bugs
+ * - Support for cross-type conversion with proper type checking
+ * 
+ * Ideal for high-performance applications requiring frequent allocation/deallocation
+ * of objects with deterministic performance characteristics and minimal memory overhead.
+ */
+
 #include "Bitmap.h"
 #include <mutex>
 #include <string>
